@@ -8,6 +8,7 @@ const uuidv4 = require("uuid/v4");
 const START_SCREEN = "START_SCREEN";
 const GOOD_SCREEN = "GOOD_SCREEN";
 const BAD_SCREEN = "BAD_SCREEN";
+const BAD_SCREEN2 = "BAD_SCREEN2";
 const END_SCREEN = "END_SCREEN";
 
 class App extends Component {
@@ -28,14 +29,15 @@ class App extends Component {
     this.setState({ screen: GOOD_SCREEN, dotLocation: 1 });
   };
   afterCapture = () => {
-    console.log("photo taken");
     const { screen, dotLocation } = this.state;
 
     if (dotLocation >= 5 && screen === GOOD_SCREEN) {
       // Change to bad screen
       this.setState({ dotLocation: 1, screen: BAD_SCREEN });
     } else if (dotLocation >= 5 && screen === BAD_SCREEN) {
-      // Change to end screen
+      
+      this.setState({ dotLocation: 1, screen: BAD_SCREEN2 });
+    } else if(dotLocation >= 5 && screen === BAD_SCREEN2){
       this.setState({ dotLocation: null, screen: END_SCREEN });
     } else {
       this.setState({ dotLocation: dotLocation + 1 });
@@ -62,18 +64,43 @@ class App extends Component {
     return null;
   };
 
-  render() {
+  getGuidelines(){
     const { screen } = this.state;
+    if(screen === GOOD_SCREEN){
+      return (
+        <div>
+          <p>Sätt dig längst in på stolen som ger stöd för hela låret, gärna med ett knytnävsstor utrymme mellan sitsen och knävecken.</p>
+          <p>Placera bildskärmen på en armlängds avstånd med den övre kanten i höjd med ögonen eller aningen lägre.</p>
+          <p>Sträck på dig.</p>
+          <p>Se till att bordet är på en höjd som gör att du sitter avslappnad i axlar och skuldror när du knappar på tangentbordet.</p>
+        </div>
+      )
+    } else if(screen === BAD_SCREEN){
+      return (
+        <div>
+          <p>Sitt som en "hösäck", alltså sjunk ner i stolen och belasta ländryggen på ett felaktigt sätt. </p>
+        </div>
+      )
+    } else if (screen === BAD_SCREEN2){
+      return (
+        <div>
+          <p>Luta dig fram över skrivbordet med uppdragna axlar och belasta ryggen på ett felaktigt sätt</p>
+        </div>
+      )
+    }
+  }
+
+  render() {
+    const { screen, dotLocation } = this.state;
 
     return (
       <div className="app">
         {this.renderDot()}
         <div className="sidebar">
           <h2 class="title">Riktlinjer</h2>
-          <p>1. Sitt med båda fötterna i marken</p>
-          <p>2. Rak i ryggen</p>
-          <p>3. Avslappnad nacke</p>
-          <p>4. -</p>
+         {
+           this.getGuidelines()
+         }
         </div>
         <div className="main">
           {screen === START_SCREEN && (
@@ -106,7 +133,7 @@ class App extends Component {
               <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
               <ImageComponent
                 folder="oskarsbilder/"
-                filename="good1"
+                filename={"good1-" + dotLocation}
                 hash={this.state.hash}
                 afterCapture={this.afterCapture}
               />
@@ -115,20 +142,34 @@ class App extends Component {
           {screen === BAD_SCREEN && (
             <div className="photo-view">
               <h2>Ergonomiskt felaktig position</h2>
-              <p>Sitt nu som du brukar sitta då du inte sitter ergonomiskt korrekt och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
+              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
               <ImageComponent
                 folder="oskarsbilder/"
-                filename="bad1"
+                filename={"bad1" + dotLocation}
                 hash={this.state.hash}
                 afterCapture={this.afterCapture}
               />
             </div>
           )}
+
+          {screen === BAD_SCREEN2 && (
+            <div className="photo-view">
+              <h2>Ergonomiskt felaktig position</h2>
+              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
+              <ImageComponent
+                folder="oskarsbilder/"
+                filename={"bad2" + dotLocation}
+                hash={this.state.hash}
+                afterCapture={this.afterCapture}
+              />
+            </div>
+          )}
+
           {screen === END_SCREEN && (
             <div>
               <h2>Färdigt!</h2>
               <div className="information">
-              <p>Ett stort tack igen för hjälpen! Har ni några frågor är det bara att kontakta oss på sacharias.sjoqvist@gmail.com.</p>
+              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
               </div>
             </div>
           )}

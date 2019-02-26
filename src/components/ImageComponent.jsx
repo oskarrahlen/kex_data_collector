@@ -40,10 +40,10 @@ class ImageComponent extends Component {
       <div className="camera">
         <Webcam
           audio={false}
-          height={180}
+          height={500}
           ref={this.setRef}
           screenshotFormat="image/jpeg"
-          width={200}
+          width={500}
           videoConstraints={videoConstraints}
         />
         <Button
