@@ -6,9 +6,61 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #2f3542;
+  padding: 16px;
+  padding-top: 32px;
+  color: #FFF;
+}
+
+.main {
+  flex: 3;
+  background-color: #fafafa;
+  padding: 32px;
+  align-items: center;
+}
+
+.title {
+  color: #FFF;
+}
+
+.information {
+  padding-bottom: 32px;
+}
+
+.dot {
+  margin: 16px;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 15px;
+  box-shadow: 0 1px 8px 0 rgba(10,10,10,.5);
+}
+
+.photo-view {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.camera {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
