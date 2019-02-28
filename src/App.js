@@ -70,15 +70,16 @@ class App extends Component {
       return (
         <div>
           <p>Sätt dig längst in på stolen som ger stöd för hela låret, gärna med ett knytnävsstor utrymme mellan sitsen och knävecken.</p>
-          <p>Placera bildskärmen på en armlängds avstånd med den övre kanten i höjd med ögonen eller aningen lägre.</p>
           <p>Sträck på dig.</p>
+          <p>Skjut in rumpan mot stolsryggen</p>
           <p>Se till att bordet är på en höjd som gör att du sitter avslappnad i axlar och skuldror när du knappar på tangentbordet.</p>
+          <p>Se till att stolen är i en sådan höjd att du når ner till golvet</p>
         </div>
       )
     } else if(screen === BAD_SCREEN){
       return (
         <div>
-          <p>Sitt som en "hösäck", alltså sjunk ner i stolen och belasta ländryggen på ett felaktigt sätt. </p>
+          <p>Sitt som en "hösäck", alltså sjunk ner ordentligt i stolen och belasta ländryggen på ett felaktigt sätt.</p>
         </div>
       )
     } else if (screen === BAD_SCREEN2){
@@ -130,7 +131,7 @@ class App extends Component {
           {screen === GOOD_SCREEN && (
             <div className="photo-view">
               <h2>Ergonomiskt korrekt position</h2>
-              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
+              <p>Sitt enligt riktlinjerna till vänster och kolla på den röda cirkeln genom att <b>vrida på huvudet.</b> Tryck sedan på knappen “Ta foto”.</p>
               <ImageComponent
                 folder="oskarsbilder/"
                 filename={"good1-" + dotLocation}
@@ -142,7 +143,7 @@ class App extends Component {
           {screen === BAD_SCREEN && (
             <div className="photo-view">
               <h2>Ergonomiskt felaktig position</h2>
-              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
+              <p>Sitt enligt riktlinjerna till vänster och kolla på den röda cirkeln genom att <b>vrida på huvudet.</b> Tryck sedan på knappen “Ta foto”.</p>
               <ImageComponent
                 folder="oskarsbilder/"
                 filename={"bad1" + dotLocation}
@@ -155,7 +156,7 @@ class App extends Component {
           {screen === BAD_SCREEN2 && (
             <div className="photo-view">
               <h2>Ergonomiskt felaktig position</h2>
-              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
+              <p>Sitt enligt riktlinjerna till vänster och kolla på den röda cirkeln genom att <b>vrida på huvudet.</b> Tryck sedan på knappen “Ta foto”.</p>
               <ImageComponent
                 folder="oskarsbilder/"
                 filename={"bad2" + dotLocation}
@@ -169,7 +170,6 @@ class App extends Component {
             <div>
               <h2>Färdigt!</h2>
               <div className="information">
-              <p>Sitt enligt riktlinjerna till vänster och håll blicken på den röda cirkeln. Tryck sedan på knappen “Ta foto”.</p>
               </div>
             </div>
           )}
