@@ -108,17 +108,23 @@ class App extends Component {
               <div>
               <h2>Hej!</h2>
               <p>Var vänlig och läs igenom innan start.</p>
-              <p>Experimentet tar ungefär 1 minut.</p>
-              <p>Det här är ett experiment till en kandidatuppsats inom djupinlärning vid KTH av Oskar Råhlén och Sacharias Sjöqvist. Vårt mål med uppsats är att studera om det är möjligt att med hjälp av maskininlärning och datoranvändarens kamera avgöra om användaren sitter ergonomiskt korrekt vid datorn eller inte. Experimentet kommer bestå av att ta ett antal bilder. Dessa bilder kommer vara anonyma, sparas krypterat och kommer användas till att träna maskininlärningsmodell. Bara vi kommer ha tillgång till bilderna och bilderna kommer raderas permanent efter experimentet.</p>
-              <p>Experimentet förutsätter att du sitter framför en <b>laptop</b> med en <b>webbkamera</b>. Är detta inte fallet så ber vi dig byta dator innan du utför experimentet. Du bör även ha webbsidans fönster i helskärm eller låta fönstret täcka en så stor del av skärmen som möjligt.</p>
-              <p>Kontakt: sacharias.sjoqvist@gmail.com</p>
+              <p>
+                Den här datainsamling är till en kandidatuppsats inom djupinlärning av Oskar Råhlén och Sacharias Sjöqvist. 
+                Vi vill med hjälp av bilder från webbkameran bygga en model som kan urskilja en ergonomisk sittställning.
+                Bilderna sparas anonymt och raderas efter studien är slutförd.
+              </p>
+              <p>
+                Du bör sitta vid en <b>laptop</b> med en <b>webbkamera</b>. Är detta inte fallet så ber vi dig byta dator innan datainsamlingen.
+                Webbsidans fönster bör täcka en så stor del av skärmen som möjligt.
+              </p>
+              <p>Vid frågor kontakta oss på: sacharias.sjoqvist@gmail.com</p>
 
               <h3>Tillvägagångssätt</h3>
-              <p>När du trycker på knappen Start så kommer du se en kameravy, en röd prick och en knapp med texten “ta foto”. Du börjar med att följa riktlinjerna till vänster. Riktlinjerna kommer alltid finnas tillgängliga. Du ska sedan hålla blicken på den röda pricken och klicka på knappen “ta foto”. Pricken kommer då byta position och processen kommer upprepas. Det är totalt fem foton i ergonomisk korrekt position.</p>
-              
-              <p>Därefter kommer ett liknande test där du istället ska sitta på ett inkorrekt sätt framför datorn. Här är det upp till din fantasi att återskapa verklighetstrogna positioner. Tänk er gärna hur ni sitter ibland som inte motsvarar de ergonomiska riktlinjerna. T.ex. framåtlutad, nerhasad, etc. Ta sedan fem sådana foton.</p>
-              <p>Experimentet är sedan färdigt. Inga av stegen är tidsbegränsade, så ta den tid ni behöver.</p>
-              
+              <p>
+                När du trycker på Start nedan så kommer webbkameran starta, en röd prick kommer synas och knappen "Ta foto". 
+                Läs och följ då riktlinjerna till vänster, titta sedan med huvudet på den röda pricken och tryck på "Ta foto".
+                Du kommer ta 5 foton i korrekt positioner, sedan 5 nersjunken och 5 framåtlutad.
+              </p>
               <p>Lycka till!</p>
               </div>
 
